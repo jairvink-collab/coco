@@ -45,10 +45,51 @@ Ankers: `#top`, `#over`, `#expertise`, `#diensten`, `#trajecten`, `#boek`,
 2. Tekst aan een CMS-veld binden wist de toegewezen tekststijl. Volgorde is dus:
    eerst binden, daarna de stijl toewijzen.
 
+## Breakpoints
+
+Drie breakpoints als replica's van Desktop: **Desktop 1440**, **Tablet 810**,
+**Phone 390**. Replica's erven alles van de primaire variant, dus er is per
+breakpoint alleen overschreven wat anders moet.
+
+- Secties: horizontale padding 64 naar 32 naar 20.
+- Rasters: Hero, Expertise, Werkwijze, Boek en Contact worden op tablet en
+  mobiel een verticale stack. Diensten gaat van 4 naar 2 naar 1 kolom,
+  Trajecten van 3 naar 2 naar 1.
+- Beeld: portret 440 naar 380 naar 300 breed, boekcover 360 naar 300 naar 230,
+  sfeerfoto 850 naar 520 naar 380 hoog. De sfeergradiënten zijn per breakpoint
+  herschaald.
+- De cursieve ondertitel schuift 42, 36 en 20 pixels over het woordmerk,
+  net als de `clamp` in het ontwerp.
+
+Typografie schaalt via de breakpoint-slots van de tekststijlen: 21 presets
+hebben een `medium` en `small` waarde gekregen, van Display XL 160 naar 92 naar
+52 tot Body 17 naar 16. Eén wijziging in een preset werkt door op alle
+breakpoints.
+
+## Mobiel menu
+
+Op tablet en mobiel zijn de merknaam en de linkbalk verborgen en verschijnt in
+plaats daarvan de component **Mobiel menu**: een gesloten variant van 60px die
+de links wegknipt, en een open variant met `height: auto` die ze toont. De
+hamburger wisselt met `SET_VARIANT` tussen beide. Dit is het patroon dat Framer
+zelf voorschrijft voor een drawer, een vaste overlay is er expliciet niet voor
+bedoeld.
+
+## Tilt op het boek
+
+De boekcover kantelt bij hover: `perspective` van 1200px op de wrapper,
+`preserve3d`, en op de cover zelf een rotatie van -9 en 14 graden, schaal 1.05,
+8 pixels omhoog en een diepere schaduw, met een veer als overgang. Het paneel
+eromheen staat op `overflow: visible` zodat het boek er tijdens de kanteling
+uit mag steken.
+
+Let op: dit is een kanteling bij hover, niet een die de muis volgt. Dat laatste
+vraagt een code component.
+
 ## Wat nog niet klopt met het ontwerp
 
-- Beelden zijn placeholders op de juiste maat en vorm: portret, sfeerfoto,
-  boekcover en zes logo's.
+- De zes partnerlogo's zijn nog tekstplaceholders. Portret, sfeerfoto en
+  boekcover zijn inmiddels echte beelden.
 - De draaiende stempeltekst rond de hero-knop is een SVG met `textPath`. Nu staat
   er een cirkel met pijl. Vergt een code component of los SVG-asset.
 - De pijlen bij Reviews zijn visueel. De rail zelf scrollt wel horizontaal.
