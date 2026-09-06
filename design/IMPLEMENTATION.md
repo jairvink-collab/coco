@@ -1,74 +1,57 @@
-# Voedingspraktijk → Framer implementation
+# Coco Brocades v2 in Framer
 
-Source design: `Voedingspraktijk.dc.html` (Claude Design export, "Organic" design system).
-Target: Framer project **Coco Brocades** (`jiYigP9ZWixVFJrGOztH`), home page `/`.
+Bron: `cocobrocades.bundle.html` (self-extracting Claude Design export).
+De uitgepakte pagina staat in `cocobrocades.page.html`, dat is de werkelijke spec.
+Doel: Framer-project **Coco Brocades**, home `/`, breakpoint Desktop 1440px.
 
-The page is built from Framer-native nodes — no HTML import — so everything stays
-editable on the canvas. The design system was registered as project-level styles
-first, so new pages inherit the look automatically.
+De vorige aubergine/ijsblauwe opzet is volledig verwijderd: pagina, tokens,
+tekststijlen, beide CMS-collecties en de knopcomponent. Dit is een schone herbouw.
 
-## Colour style tokens
+## Kleurtokens (23)
 
-| Token | Value | Used for |
-| --- | --- | --- |
-| Aubergine | `#4c1a31` | page ground, text on light surfaces |
-| Aubergine Surface | `#642440` | cards, book panel |
-| Aubergine Deep | `#5c2039` | hero decorative blob |
-| Aubergine Glow | `#7a2c4c` | book decorative blob |
-| Aubergine Muted | `rgba(76,26,49,.75)` | body copy on the ice contact panel |
-| Ice | `#a9dcf3` | primary text, primary button fill |
-| Ice Muted | `rgba(169,220,243,.82)` | body copy |
-| Ice Subtle | `rgba(169,220,243,.55)` | footer meta, captions |
-| Ice Tint | `rgba(169,220,243,.14)` | tag pills, social chips |
-| Ice Divider | `rgba(169,220,243,.22)` | footer rule, outline buttons |
-| Saffron | `#f0c24a` | accent badge, kickers, bullets |
-| Cream | `#fff8f2` | review cards |
-| Terracotta | `#c67139` | review stars (inherited from Organic's accent) |
+Grond `#faf7fa`, Plum `#4a2437` met hover `#61344b`, Lavendel `#cdbaf7` en de
+tinten Soft `#e9e0f6`, Tint `#efe8fa`, Pale `#f6f0fb`, Outline `#e4d8f4`,
+Hover `#dccdfb`. Brons `#8a6428` als accent. Tekst: Ink `#332b31`, Body `#5a4f56`,
+Body Soft `#7a6f76`, Body Muted `#6f636a`, Review Ink `#4a3b43`. Randen: Border
+`#e7dfe8`, Border Soft `#e0d5e2`, Border Pill `#d9cede`, Nav Border `#ece5ed`.
+Plus Surface White, On Plum Body en On Plum Pale voor tekst op donkere vlakken.
 
-## Text style presets
+## Tekststijlen (44)
 
-Caprasimo 400 for display, Figtree for body — the Organic system's pairing.
+Instrument Serif 400 voor display en koppen, Figtree voor tekst en labels.
+Display XL 160 (het woordmerk), Display Italic 82, Heading 1 68 tot Heading 6 24,
+Stat 32 en Stat Large 40, plus varianten op plum, kickers in brons en lavendel,
+uppercase navigatie- en knoplabels, en Review Body, Stars, Meta.
 
-Display 88 · Heading 1 60 · Heading 2 50 · Heading 3 34 · Heading 4 28 · Heading 5 24 ·
-Brand 26 · Stat 30 · Kicker 13 caps · Body Large 19 · Body 17 · Body Small 16 ·
-Nav Link 15 · Button Label 16 · Button Label Small 15 · Tag Label 13 · Meta 15 · Stars 22
+## Opbouw
 
-Dark-on-light variants (for the cream review cards and the ice contact panel):
-Heading 2 Dark · Heading 5 Dark · Body Large Dark · Body Small Dark · Stat Dark ·
-Tag Label Dark · Badge · Button Label · Button Label Ice
-Centred variants (marquee header only): Heading 2 Center · Body Center · Logo Label
+Sfeergradiënten als losse laag achter de pagina, sticky nav met blur, hero met
+woordmerk en pill-portret plus stempel, Expertise met genummerde lijst op plum,
+logobalk met ticker, Diensten, Trajecten, Werkwijze, Boek, Reviews, Contact, Footer.
+Ankers: `#top`, `#over`, `#expertise`, `#diensten`, `#trajecten`, `#boek`,
+`#reviews`, `#contact`, allemaal met smooth scroll.
 
-Note: Framer ignores inline text overrides on a node that carries a style preset, so
-each distinct treatment is its own preset rather than a preset plus a local tweak.
+## CMS, maximaal twee collecties
 
-## Page structure
+- **Producten**: Titel, Prijslabel, Kaarttekst, Beschrijving, Linktekst, Link.
+  Vier items, waarvan `1:1 coaching` de echte copy en prijs draagt. De andere drie
+  komen uit het ontwerp en zijn nog placeholder.
+- **Reviews**: Naam, Quote. Vijf items.
 
-Breakpoint `Desktop` widened to 1440px to match the design's `max-width: 1440px`.
-Sections in order: Nav · Hero · Expertise + Over mij · Samenwerkingen (ticker) ·
-Boek · Trajecten · Zo werkt het · Reviews · Contact · Footer.
+## Twee Framer-eigenaardigheden
 
-Scroll anchors: `#expertise`, `#over`, `#trajecten`, `#contact`, wired from the nav,
-both hero buttons and the traject cards with smooth scroll.
+1. Een tekststijl wordt genegeerd zodra je losse tekstopmaak op dezelfde knoop zet.
+   Elke variant is daarom een eigen preset.
+2. Tekst aan een CMS-veld binden wist de toegewezen tekststijl. Volgorde is dus:
+   eerst binden, daarna de stijl toewijzen.
 
-## CMS
+## Wat nog niet klopt met het ontwerp
 
-Repeating content is CMS-backed rather than hardcoded on the canvas:
-
-- **Trajecten** — Kicker, Titel, Omschrijving, Prijs (3 items)
-- **Reviews** — Naam, Quote (5 items)
-
-Bind order matters: set `collectionList.collection` on the list *before* binding any
-field to a descendant, or the binding is rejected as out of scope.
-
-## Deviations from the source
-
-- The organic blob mask (`46% 54% 48% 52% / 40% 38% 62% 60%`) has no Framer
-  equivalent — CSS elliptical corner radii aren't supported. Approximated with four
-  differing px corner radii for an asymmetric blob.
-- Type scale consolidated: the source uses ~11 heading sizes via `clamp()`; this maps
-  them onto 6 steps so the scale stays maintainable.
-- Review carousel arrows are visual only. The source drives them with JavaScript;
-  the rail itself is horizontally scrollable. Making them functional needs either a
-  code component or Framer's built-in Carousel.
-- Images are placeholder frames at the correct size, radius and mask, pending the
-  real assets (portrait, gym photo, client photo, book cover, 7 partner logos).
+- Beelden zijn placeholders op de juiste maat en vorm: portret, sfeerfoto,
+  boekcover en zes logo's.
+- De draaiende stempeltekst rond de hero-knop is een SVG met `textPath`. Nu staat
+  er een cirkel met pijl. Vergt een code component of los SVG-asset.
+- De pijlen bij Reviews zijn visueel. De rail zelf scrollt wel horizontaal.
+- Mobiel menu en breakpoints ontbreken, er is alleen Desktop 1440.
+- De vierde Diensten-kaart is in het ontwerp donker. Een CMS-lijst deelt één
+  template, dus alle vier zijn nu wit.

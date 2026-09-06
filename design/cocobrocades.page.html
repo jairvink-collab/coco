@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="7fe1c271-4069-489e-a696-4bc303704705"></script>
+</head>
+<body>
+<x-dc>
+
+
+<helmet>
+<style>/* Organic — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+/* latin-ext */
+@font-face {
+  font-family: 'Caprasimo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("0f7cd9dd-8972-422a-addd-e429fabc7075") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Caprasimo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("07b2e072-e5bf-4929-8cbf-2fab78831d71") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("028e20c5-51ed-4ebc-98e2-8d69225cfe52") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("cb5beb14-17ab-4a68-9419-37289e3dfaea") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("028e20c5-51ed-4ebc-98e2-8d69225cfe52") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("cb5beb14-17ab-4a68-9419-37289e3dfaea") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("028e20c5-51ed-4ebc-98e2-8d69225cfe52") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("cb5beb14-17ab-4a68-9419-37289e3dfaea") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --color-bg: #f5ead8;
+  --color-surface: #ebddc5;
+  --color-text: #201e1d;
+  --color-accent: #c67139;
+  --color-accent-2: #7a8a5e;
+  --color-divider: color-mix(in srgb, #201e1d 16%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f9f4ed;
+  --color-neutral-200: #eee7db;
+  --color-neutral-300: #dcd3c4;
+  --color-neutral-400: #c0b6a5;
+  --color-neutral-500: #a19786;
+  --color-neutral-600: #82796a;
+  --color-neutral-700: #645c50;
+  --color-neutral-800: #474238;
+  --color-neutral-900: #2e2b25;
+
+  --color-accent-100: #fff2eb;
+  --color-accent-200: #ffe1d0;
+  --color-accent-300: #ffc6a5;
+  --color-accent-400: #f6a06b;
+  --color-accent-500: #d67f48;
+  --color-accent-600: #b2622d;
+  --color-accent-700: #8c491a;
+  --color-accent-800: #643312;
+  --color-accent-900: #402310;
+
+  --color-accent-2-100: #f0fae1;
+  --color-accent-2-200: #e1eecc;
+  --color-accent-2-300: #ccdbb2;
+  --color-accent-2-400: #aebf92;
+  --color-accent-2-500: #8fa073;
+  --color-accent-2-600: #728157;
+  --color-accent-2-700: #56633f;
+  --color-accent-2-800: #3d472b;
+  --color-accent-2-900: #272e1b;
+
+  --font-heading: "Caprasimo", system-ui, sans-serif;
+  --font-heading-weight: 400;
+  --font-body: "Figtree", system-ui, sans-serif;
+
+  --space-1: 4.4px;
+  --space-2: 8.8px;
+  --space-3: 13.2px;
+  --space-4: 17.6px;
+  --space-6: 26.4px;
+  --space-8: 35.2px;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2e2b25 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2e2b25 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2e2b25 22%, transparent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.washed{filter:saturate(0.6) contrast(0.85) brightness(1.1) opacity(0.94)}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: none;
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+/* — rounded frame: everything softens, small controls go pill — */
+.card, .dialog { border-radius: calc(var(--radius-lg) * 1.15); }
+.btn, .tag, .seg, .input { border-radius: 999px; }
+.input { padding-inline: 14px; }
+
+</style>
+<script src="5d908cde-6e6b-4511-8b22-548542ec9aa9"></script>
+<script src="281ac5cf-6819-47d7-b31a-bef7c85a6ce6"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("028e20c5-51ed-4ebc-98e2-8d69225cfe52") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("cb5beb14-17ab-4a68-9419-37289e3dfaea") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("028e20c5-51ed-4ebc-98e2-8d69225cfe52") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("cb5beb14-17ab-4a68-9419-37289e3dfaea") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("028e20c5-51ed-4ebc-98e2-8d69225cfe52") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("cb5beb14-17ab-4a68-9419-37289e3dfaea") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("028e20c5-51ed-4ebc-98e2-8d69225cfe52") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("cb5beb14-17ab-4a68-9419-37289e3dfaea") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("1bc9f011-4a63-4ea3-aff0-9c8384c162a7") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("abc3f5c8-0147-4838-8f5e-c8905f86be20") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("c915497b-965a-4989-a722-724c96aa60c5") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("1438591e-1a20-4d03-8b9a-abe3329186d0") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;background:#faf7fa;color:#332b31;font-family:'Figtree',sans-serif}
+a{color:#5b2b41;text-decoration:none}
+a:hover{color:#8a5c74}
+@keyframes drift{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes spinstamp{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+</style>
+</helmet>
+
+<div style="position:relative;background:#faf7fa;color:#332b31;font-family:'Figtree',sans-serif">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0">
+    <div style="position:absolute;left:-14vw;top:-6vw;width:52vw;height:52vw;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(205,186,247,0.62),rgba(205,186,247,0) 68%);filter:blur(28px)"></div>
+    <div style="position:absolute;right:-18vw;top:38vw;width:56vw;height:56vw;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(228,216,244,0.7),rgba(228,216,244,0) 70%);filter:blur(28px)"></div>
+    <div style="position:absolute;left:-10vw;top:105vw;width:48vw;height:48vw;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(186,160,224,0.4),rgba(186,160,224,0) 70%);filter:blur(30px)"></div>
+    <div style="position:absolute;right:-12vw;top:172vw;width:50vw;height:50vw;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(205,186,247,0.5),rgba(205,186,247,0) 70%);filter:blur(28px)"></div>
+    <div style="position:absolute;left:-8vw;top:238vw;width:46vw;height:46vw;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(228,216,244,0.6),rgba(228,216,244,0) 70%);filter:blur(28px)"></div>
+  </div>
+
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(250,247,250,0.92);backdrop-filter:blur(10px);border-bottom:1px solid #ece5ed">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(12px,1.8vw,26px);padding:16px clamp(20px,5vw,64px);max-width:1440px;margin:0 auto;font-size:13px;letter-spacing:0.14em;text-transform:uppercase">
+      <a href="#top" style="font-family:'Instrument Serif',serif;font-size:24px;letter-spacing:0.01em;text-transform:none;color:#4a2437;margin-right:auto">Coco Brocades</a>
+      <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+        <a href="#over">Over mij</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#diensten">Diensten</a>
+        <a href="#trajecten">Trajecten</a>
+        <a href="#boek">Het boek</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" style="background:#4a2437;color:#f6f0fb;border-radius:999px;padding:11px 22px;letter-spacing:0.12em" style-hover="background:#61344b;color:#f6f0fb">Maak een afspraak</a>
+      </sc-if>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button sc-camel-on-click="{{ openMenu }}" aria-label="Menu openen" style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:48px;height:48px;padding:0 12px;border:none;border-radius:999px;background:#4a2437;cursor:pointer">
+          <span style="display:block;height:1.6px;background:#f6f0fb;border-radius:2px"></span>
+          <span style="display:block;height:1.6px;background:#f6f0fb;border-radius:2px"></span>
+        </button>
+      </sc-if>
+    </div>
+  </nav>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:80;background:#4a2437;color:#f6f0fb;display:flex;flex-direction:column;padding:20px clamp(24px,7vw,48px) 44px;overflow-y:auto;overflow-x:hidden">
+      <div aria-hidden="true" style="position:absolute;right:-24vw;top:-10vw;width:80vw;height:80vw;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(205,186,247,0.35),rgba(205,186,247,0) 68%);pointer-events:none"></div>
+      <div style="position:relative;display:flex;align-items:center;gap:16px">
+        <span style="font-family:'Instrument Serif',serif;font-size:24px;color:#f6f0fb;margin-right:auto">Coco Brocades</span>
+        <button sc-camel-on-click="{{ closeMenu }}" aria-label="Menu sluiten" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(246,240,251,0.35);background:transparent;color:#f6f0fb;font-size:22px;cursor:pointer;font-family:'Figtree',sans-serif">×</button>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:4px;margin-top:auto;margin-bottom:auto;padding:36px 0">
+        <a sc-camel-on-click="{{ closeMenu }}" href="#over" style="font-family:'Instrument Serif',serif;font-size:clamp(34px,10vw,52px);line-height:1.25;color:#f6f0fb" style-hover="color:#cdbaf7">Over mij</a>
+        <a sc-camel-on-click="{{ closeMenu }}" href="#expertise" style="font-family:'Instrument Serif',serif;font-size:clamp(34px,10vw,52px);line-height:1.25;color:#f6f0fb" style-hover="color:#cdbaf7">Expertise</a>
+        <a sc-camel-on-click="{{ closeMenu }}" href="#diensten" style="font-family:'Instrument Serif',serif;font-size:clamp(34px,10vw,52px);line-height:1.25;color:#f6f0fb" style-hover="color:#cdbaf7">Diensten</a>
+        <a sc-camel-on-click="{{ closeMenu }}" href="#trajecten" style="font-family:'Instrument Serif',serif;font-size:clamp(34px,10vw,52px);line-height:1.25;color:#f6f0fb" style-hover="color:#cdbaf7">Trajecten</a>
+        <a sc-camel-on-click="{{ closeMenu }}" href="#boek" style="font-family:'Instrument Serif',serif;font-size:clamp(34px,10vw,52px);line-height:1.25;color:#f6f0fb" style-hover="color:#cdbaf7">Het boek</a>
+        <a sc-camel-on-click="{{ closeMenu }}" href="#reviews" style="font-family:'Instrument Serif',serif;font-size:clamp(34px,10vw,52px);line-height:1.25;color:#f6f0fb" style-hover="color:#cdbaf7">Reviews</a>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:18px">
+        <a sc-camel-on-click="{{ closeMenu }}" href="#contact" style="background:#cdbaf7;color:#4a2437;border-radius:999px;padding:18px 30px;text-align:center;font-size:14px;letter-spacing:0.12em;text-transform:uppercase" style-hover="background:#dccdfb;color:#4a2437">Maak een afspraak</a>
+        <div style="display:flex;gap:20px;align-items:center;font-size:14px;color:rgba(246,240,251,0.75)">
+          <a href="https://instagram.com" style="color:rgba(246,240,251,0.9)">Instagram</a>
+          <a href="https://tiktok.com" style="color:rgba(246,240,251,0.9)">TikTok</a>
+          <span style="margin-left:auto">hallo@cocobrocades.nl</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <header id="top" style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(12px,2vw,28px) clamp(20px,5vw,64px) clamp(40px,6vw,80px)">
+    <div style="text-align:center;position:relative;z-index:2">
+      <span style="display:block;font-family:'Instrument Serif',serif;font-size:clamp(52px,11.4vw,160px);line-height:0.9;letter-spacing:0.01em;color:#e4d8f4;text-transform:uppercase">Coco</span>
+      <span style="display:block;font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(32px,6.2vw,82px);line-height:1;color:#4a2437;margin-top:clamp(-42px,-4.4vw,-20px)">(Sport)diëtist</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(-12px,-1vw,0px)">
+      <div style="display:flex;flex-direction:column;gap:clamp(20px,2.5vw,32px);align-items:flex-start">
+        <p style="font-size:18px;line-height:1.65;max-width:38ch;color:#5a4f56;margin:0">Persoonlijke begeleiding voor sporters en voor iedereen die de rust rond eten terug wil vinden. Een aanpak die past bij jouw lichaam, jouw training en jouw week.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+          <a href="#contact" style="background:#4a2437;color:#f6f0fb;border-radius:999px;padding:16px 32px;font-size:14px;letter-spacing:0.1em;text-transform:uppercase" style-hover="background:#61344b;color:#f6f0fb">Plan een intake</a>
+          <a href="#trajecten" style="font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:#8a6428">Bekijk de trajecten →</a>
+        </div>
+        <div style="display:flex;gap:clamp(20px,3vw,40px);flex-wrap:wrap;padding-top:clamp(8px,1.5vw,18px);border-top:1px solid #e7dfe8;width:100%;max-width:420px">
+          <div><span style="display:block;font-family:'Instrument Serif',serif;font-size:32px;color:#4a2437;line-height:1.1">300+</span><span style="font-size:13.5px;color:#7a6f76">Cliënten begeleid</span></div>
+          <div><span style="display:block;font-family:'Instrument Serif',serif;font-size:32px;color:#4a2437;line-height:1.1">10 jr</span><span style="font-size:13.5px;color:#7a6f76">Ervaring in de sport</span></div>
+          <div><span style="display:block;font-family:'Instrument Serif',serif;font-size:32px;color:#4a2437;line-height:1.1">1</span><span style="font-size:13.5px;color:#7a6f76">Kookboek</span></div>
+        </div>
+      </div>
+      <div style="position:relative;justify-self:center;width:100%;max-width:440px">
+        <div style="background:#e9e0f6;border-radius:999px;overflow:hidden;aspect-ratio:4/5.1">
+          <image-slot id="v2-hero" shape="rect" src="50de6489-c7ca-4c8f-9754-b4dd1473ca51" fit="cover" style="width:100%;height:100%" placeholder="Portretfoto"></image-slot>
+        </div>
+        <a href="#contact" aria-label="Plan een intake" style="position:absolute;left:-18px;bottom:24px;width:132px;height:132px;display:grid;place-items:center;color:#4a2437;background:#faf7fa;border-radius:50%">
+          <span style="position:absolute;inset:0;animation:spinstamp 22s linear infinite">
+            <svg sc-camel-view-box="0 0 132 132" width="132" height="132"><defs><path id="stampcircle" d="M66,66 m-51,0 a51,51 0 1,1 102,0 a51,51 0 1,1 -102,0"></path></defs><text font-family="Instrument Serif, serif" font-size="13" letter-spacing="2.8" fill="#4a2437"><textPath href="#stampcircle" sc-camel-start-offset="0">Plan een intake · Plan een intake · </textPath></text></svg>
+          </span>
+          <span style="font-size:24px;color:#8a6428">→</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="expertise" style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(40px,6vw,88px) clamp(20px,5vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(32px,5vw,80px);align-items:start">
+    <div id="over">
+      <span style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8a6428">Over mij</span>
+      <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(34px,4.4vw,60px);line-height:1.06;margin:16px 0 20px;color:#4a2437">Eten dat jouw lichaam laat presteren.</h2>
+      <p style="font-size:17px;line-height:1.7;color:#5a4f56;max-width:58ch">In mijn praktijk begeleid ik mensen die meer uit hun lichaam willen halen, en mensen die juist weer willen leren vertrouwen op hun lichaam. Vaak zijn dat dezelfde mensen.</p>
+      <p style="font-size:17px;line-height:1.7;color:#5a4f56;max-width:58ch">Ik werk met sporters op prestatieniveau en met cliënten die herstellen van een verstoorde relatie met eten. Daarnaast ben ik personal trainer, waardoor ik training en voeding als één geheel bekijk in plaats van als twee losse dingen.</p>
+      <p style="font-size:17px;line-height:1.7;color:#5a4f56;max-width:58ch">Wat ik het mooiste vind aan dit werk: het moment waarop eten geen rekensom meer is, maar weer gewoon eten.</p>
+    </div>
+    <div style="background:#4a2437;border-radius:36px;padding:clamp(28px,3vw,44px);color:#e9e0f6">
+      <span style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#cdbaf7">Mijn expertise</span>
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:18px">
+        <div style="display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(233,224,246,0.18)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#cdbaf7;flex:none">01</span><span style="font-size:16.5px;line-height:1.45">Bachelor Voeding en Diëtetiek</span></div>
+        <div style="display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(233,224,246,0.18)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#cdbaf7;flex:none">02</span><span style="font-size:16.5px;line-height:1.45">Post-hbo Sportvoeding</span></div>
+        <div style="display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(233,224,246,0.18)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#cdbaf7;flex:none">03</span><span style="font-size:16.5px;line-height:1.45">Post-hbo Eetstoornissen</span></div>
+        <div style="display:flex;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(233,224,246,0.18)"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#cdbaf7;flex:none">04</span><span style="font-size:16.5px;line-height:1.45">Certified Personal Trainer</span></div>
+        <div style="display:flex;gap:14px;align-items:baseline;padding:14px 0"><span style="font-family:'Instrument Serif',serif;font-size:15px;color:#cdbaf7;flex:none">05</span><span style="font-size:16.5px;line-height:1.45">Kwaliteitsgeregistreerd diëtist, KP 000000</span></div>
+      </div>
+      <div style="margin-top:22px;padding-top:20px;border-top:1px solid rgba(233,224,246,0.18);display:flex;gap:14px;align-items:baseline">
+        <span style="font-family:'Instrument Serif',serif;font-size:40px;color:#cdbaf7;line-height:1">300+</span>
+        <span style="font-size:15px;line-height:1.4;color:rgba(233,224,246,0.85)">Cliënten begeleid in mijn eigen praktijk</span>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showLogos }}" hint-placeholder-val="{{ true }}">
+  <section style="position:relative;z-index:1;padding:clamp(24px,4vw,56px) 0;border-top:1px solid #e7dfe8;border-bottom:1px solid #e7dfe8;overflow:hidden">
+    <p style="text-align:center;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#6f636a;margin:0 0 clamp(22px,3vw,36px)">Mijn expertise gedeeld bij en met</p>
+    <div style="mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)">
+      <div style="display:flex;width:max-content;animation:drift 40s linear infinite">
+        <div style="display:flex;align-items:center;gap:clamp(40px,5vw,80px);padding-right:clamp(40px,5vw,80px)">
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-1" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="Nike"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-2" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="Erasmus MC"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-3" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="NOS"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-4" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="RTL"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-5" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="Cosmopolitan"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-6" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="TEVEO"></image-slot></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:clamp(40px,5vw,80px);padding-right:clamp(40px,5vw,80px)" aria-hidden="true">
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-1b" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="Nike"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-2b" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="Erasmus MC"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-3b" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="NOS"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-4b" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="RTL"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-5b" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="Cosmopolitan"></image-slot></div>
+          <div style="flex:none;width:clamp(110px,12vw,160px);height:48px;opacity:0.5"><image-slot id="v2-logo-6b" shape="rect" fit="contain" style="width:100%;height:48px" placeholder="TEVEO"></image-slot></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="diensten" style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px)">
+    <span style="display:inline-block;border:1px solid #d9cede;border-radius:999px;padding:7px 16px;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#8a6428">Diensten</span>
+    <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(34px,4.4vw,60px);line-height:1.05;margin:18px 0 14px;color:#4a2437">Manieren om met mij te werken</h2>
+    <p style="font-size:16.5px;line-height:1.65;color:#5a4f56;max-width:52ch;margin:0 0 clamp(28px,3vw,44px)">Ieder lichaam en ieder doel is anders. Daarom zijn er verschillende manieren om samen te werken, afhankelijk van wat jij nodig hebt.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(16px,2vw,24px)">
+      <div style="background:#fff;border:1px solid #e7dfe8;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:14px">
+        <span style="align-self:flex-start;background:#efe8fa;color:#4a2437;border-radius:999px;padding:7px 16px;font-size:13px">Vanaf € 600</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:28px;margin:0;color:#4a2437">1-op-1 coaching</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#5a4f56;margin:0;flex:1">Persoonlijke begeleiding rondom training, herstel en jouw relatie met voeding.</p>
+        <a href="#trajecten" style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8a6428">Lees meer →</a>
+      </div>
+      <div style="background:#fff;border:1px solid #e7dfe8;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:14px">
+        <span style="align-self:flex-start;background:#efe8fa;color:#4a2437;border-radius:999px;padding:7px 16px;font-size:13px">Vanaf € 350</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:28px;margin:0;color:#4a2437">Groepscoaching</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#5a4f56;margin:0;flex:1">Samen werken aan inzicht, herstel en een gezondere relatie met je lichaam.</p>
+        <a href="#trajecten" style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8a6428">Lees meer →</a>
+      </div>
+      <div style="background:#fff;border:1px solid #e7dfe8;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:14px">
+        <span style="align-self:flex-start;background:#efe8fa;color:#4a2437;border-radius:999px;padding:7px 16px;font-size:13px">Vanaf € 67,99</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:28px;margin:0;color:#4a2437">Het kookboek</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:#5a4f56;margin:0;flex:1">Food = Fuel: recepten en uitleg over eten rondom je training en herstel.</p>
+        <a href="#boek" style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8a6428">Lees meer →</a>
+      </div>
+      <div style="background:#4a2437;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:14px;color:#e9e0f6">
+        <span style="align-self:flex-start;background:rgba(233,224,246,0.16);color:#e9e0f6;border-radius:999px;padding:7px 16px;font-size:13px">Meer informatie</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:28px;margin:0;color:#e9e0f6">Lezingen en workshops</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:rgba(233,224,246,0.82);margin:0;flex:1">Voor teams, sportclubs en events rondom voeding, prestatie en herstel.</p>
+        <a href="#contact" style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#cdbaf7">Neem contact op →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="trajecten" style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px)">
+    <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;margin-bottom:clamp(28px,3vw,48px)">
+      <div style="flex:1;min-width:280px">
+        <span style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8a6428">Trajecten</span>
+        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(34px,4.4vw,60px);line-height:1.05;margin:14px 0 0;color:#4a2437">Zo werken we samen</h2>
+      </div>
+      <p style="font-size:16px;line-height:1.6;color:#5a4f56;max-width:44ch;margin:0">Elk traject start met een uitgebreide intake. Vergoeding vanuit de basisverzekering is in veel gevallen mogelijk.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(16px,2vw,26px)">
+      <div style="background:#fff;border:1px solid #e7dfe8;border-radius:32px;padding:clamp(26px,2.6vw,38px);display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#8a6428">Prestatie</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:30px;margin:0;color:#4a2437">Sportvoeding traject</h3>
+        <p style="font-size:15.5px;line-height:1.65;color:#5a4f56;margin:0;flex:1">Drie maanden begeleiding rond training, wedstrijden en herstel. Inclusief meetmomenten en bijsturen per trainingsblok.</p>
+        <sc-if value="{{ showPrijzen }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Instrument Serif',serif;font-size:32px;color:#4a2437">€ 600</span></sc-if>
+        <a href="#contact" style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8a6428">Meer weten →</a>
+      </div>
+      <div style="background:#4a2437;border-radius:32px;padding:clamp(26px,2.6vw,38px);display:flex;flex-direction:column;gap:14px;color:#e9e0f6">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#cdbaf7">Herstel</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:30px;margin:0;color:#e9e0f6">Rust rond eten</h3>
+        <p style="font-size:15.5px;line-height:1.65;color:rgba(233,224,246,0.82);margin:0;flex:1">Begeleiding bij een verstoorde relatie met eten, in eigen tempo. Waar nodig in samenwerking met je behandelaar.</p>
+        <sc-if value="{{ showPrijzen }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Instrument Serif',serif;font-size:32px;color:#e9e0f6">Op maat</span></sc-if>
+        <a href="#contact" style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#cdbaf7">Meer weten →</a>
+      </div>
+      <div style="background:#fff;border:1px solid #e7dfe8;border-radius:32px;padding:clamp(26px,2.6vw,38px);display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#8a6428">Kort</span>
+        <h3 style="font-family:'Instrument Serif',serif;font-size:30px;margin:0;color:#4a2437">Los consult</h3>
+        <p style="font-size:15.5px;line-height:1.65;color:#5a4f56;margin:0;flex:1">Eén sessie voor een concrete vraag: een wedstrijddag, een plateau of een tweede blik op je eigen plan.</p>
+        <sc-if value="{{ showPrijzen }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Instrument Serif',serif;font-size:32px;color:#4a2437">€ 95</span></sc-if>
+        <a href="#contact" style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#8a6428">Meer weten →</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(24px,3vw,48px) clamp(20px,5vw,64px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+      <div style="background:#e9e0f6;border-radius:999px;overflow:hidden;aspect-ratio:3/4.2">
+        <image-slot id="v2-gym" shape="rect" src="e20a976a-ec43-4ab8-a242-e0789200984b" fit="cover" style="width:100%;height:100%" placeholder="Sfeerfoto training"></image-slot>
+      </div>
+      <div>
+        <span style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8a6428">Werkwijze</span>
+        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(32px,4vw,54px);line-height:1.05;margin:14px 0 26px;color:#4a2437">In drie stappen</h2>
+        <div style="display:flex;flex-direction:column;gap:22px">
+          <div style="display:flex;gap:18px;align-items:flex-start">
+            <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#8a6428;flex:none;width:34px">01</span>
+            <div><h3 style="font-family:'Instrument Serif',serif;font-size:24px;margin:0 0 6px;color:#4a2437">Kennismaken</h3><p style="font-size:16px;line-height:1.6;color:#5a4f56;margin:0">Een gesprek van twintig minuten, gratis. We kijken of het klikt en wat je nodig hebt.</p></div>
+          </div>
+          <div style="display:flex;gap:18px;align-items:flex-start">
+            <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#8a6428;flex:none;width:34px">02</span>
+            <div><h3 style="font-family:'Instrument Serif',serif;font-size:24px;margin:0 0 6px;color:#4a2437">Intake en plan</h3><p style="font-size:16px;line-height:1.6;color:#5a4f56;margin:0">Uitgebreid in kaart brengen: je lichaam, je training, je hoofd en je dagelijkse praktijk.</p></div>
+          </div>
+          <div style="display:flex;gap:18px;align-items:flex-start">
+            <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#8a6428;flex:none;width:34px">03</span>
+            <div><h3 style="font-family:'Instrument Serif',serif;font-size:24px;margin:0 0 6px;color:#4a2437">Bijsturen</h3><p style="font-size:16px;line-height:1.6;color:#5a4f56;margin:0">Vaste momenten om te evalueren en aan te passen, tot het zonder mij loopt.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="boek" style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(48px,6vw,96px) clamp(20px,5vw,64px)">
+    <div style="background:#e9e0f6;border-radius:clamp(36px,5vw,64px);padding:clamp(32px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+      <div style="display:grid;place-items:center">
+        <img src="d58232cb-ec09-4f4b-bd2c-7e3efcaa0b05" alt="Food = Fuel, het kookboek voor elke sporter" style="width:100%;max-width:360px;filter:drop-shadow(0 24px 44px rgba(74,36,55,0.22))">
+      </div>
+      <div>
+        <span style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8a6428">Nu in de shop</span>
+        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(38px,5vw,68px);line-height:1;margin:14px 0 16px;color:#4a2437">Food = Fuel</h2>
+        <p style="font-size:18px;line-height:1.6;color:#4a2437;margin:0 0 12px;max-width:40ch">Het kookboek voor elke sporter. Recepten voor betere sportprestaties en sneller herstel.</p>
+        <p style="font-size:16px;line-height:1.7;color:#5a4f56;margin:0 0 28px;max-width:48ch">Alles wat ik in de praktijk uitleg, in gerechten die je op een gewone doordeweekse avond nog steeds maakt. Met uitleg over timing rond je training, herstel en genoeg eten.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+          <a href="#" style="background:#4a2437;color:#f6f0fb;border-radius:999px;padding:15px 32px;font-size:14px;letter-spacing:0.1em;text-transform:uppercase" style-hover="background:#61344b;color:#f6f0fb">Bekijk in de shop</a>
+          <a href="#" style="border:1px solid #4a2437;color:#4a2437;border-radius:999px;padding:15px 32px;font-size:14px;letter-spacing:0.1em;text-transform:uppercase" style-hover="background:rgba(74,36,55,0.08);color:#4a2437">Lees een recept</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showQuote }}" hint-placeholder-val="{{ true }}">
+  <section id="reviews" style="position:relative;z-index:1;padding:clamp(24px,3vw,48px) 0 clamp(32px,4vw,64px);overflow-x:clip">
+    <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,5vw,64px);display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end">
+      <div style="flex:1;min-width:280px">
+        <span style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8a6428">Reviews</span>
+        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(32px,4vw,54px);line-height:1.05;margin:14px 0 0;color:#4a2437">Wat cliënten zeggen</h2>
+      </div>
+      <div style="display:flex;gap:12px;flex:none">
+        <button sc-camel-on-click="{{ prev }}" aria-label="Vorige reviews" style="width:52px;height:52px;border-radius:50%;border:1px solid #cdbaf7;background:transparent;color:#4a2437;font-size:20px;cursor:pointer;font-family:'Figtree',sans-serif" style-hover="background:#efe8fa">←</button>
+        <button sc-camel-on-click="{{ next }}" aria-label="Volgende reviews" style="width:52px;height:52px;border-radius:50%;border:none;background:#4a2437;color:#f6f0fb;font-size:20px;cursor:pointer;font-family:'Figtree',sans-serif" style-hover="background:#61344b">→</button>
+      </div>
+    </div>
+    <div ref="{{ rail }}" style="display:flex;gap:clamp(16px,2vw,24px);margin-top:clamp(26px,3vw,40px);padding:4px clamp(20px,5vw,64px) 20px;scroll-padding-left:clamp(20px,5vw,64px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none">
+      <div style="flex:none;width:min(380px,80vw);scroll-snap-align:start;background:#fff;border:1px solid #e7dfe8;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:16px">
+        <span style="font-size:18px;letter-spacing:3px;color:#8a6428">★★★★★</span>
+        <p style="font-size:15.5px;line-height:1.65;color:#4a3b43;margin:0;flex:1">Ik ben heel blij dat ik de coaching ben gestart, echt een investering in jezelf. Je krijgt waardevolle inzichten rondom je relatie met voeding en sport en bouwt op een liefdevolle manier aan een nieuwe balans met jezelf.</p>
+        <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#4a2437">Monique</span>
+      </div>
+      <div style="flex:none;width:min(380px,80vw);scroll-snap-align:start;background:#fff;border:1px solid #e7dfe8;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:16px">
+        <span style="font-size:18px;letter-spacing:3px;color:#8a6428">★★★★★</span>
+        <p style="font-size:15.5px;line-height:1.65;color:#4a3b43;margin:0;flex:1">Vanaf het eerste moment voelde ik dat ik alles kon delen. Niets was te gek. Dat gaf me het vertrouwen om stappen te zetten die ik zelf spannend vond, maar waarvan ik wist dat ze nodig waren.</p>
+        <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#4a2437">Anne</span>
+      </div>
+      <div style="flex:none;width:min(380px,80vw);scroll-snap-align:start;background:#fff;border:1px solid #e7dfe8;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:16px">
+        <span style="font-size:18px;letter-spacing:3px;color:#8a6428">★★★★★</span>
+        <p style="font-size:15.5px;line-height:1.65;color:#4a3b43;margin:0;flex:1">Ik ben ontzettend blij met de resultaten van dit traject. Mijn behoefte veranderde onderweg en het was superfijn dat er flexibel werd meegedacht en het advies werd aangepast.</p>
+        <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#4a2437">Daphne</span>
+      </div>
+      <div style="flex:none;width:min(380px,80vw);scroll-snap-align:start;background:#fff;border:1px solid #e7dfe8;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:16px">
+        <span style="font-size:18px;letter-spacing:3px;color:#8a6428">★★★★★</span>
+        <p style="font-size:15.5px;line-height:1.65;color:#4a3b43;margin:0;flex:1">Voor die tijd zat ik in een ongezond patroon van tellen, piekeren en stress. Nu eet ik genoeg voor mijn trainingen zonder daar de hele dag over na te denken.</p>
+        <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#4a2437">Stacey</span>
+      </div>
+      <div style="flex:none;width:min(380px,80vw);scroll-snap-align:start;background:#fff;border:1px solid #e7dfe8;border-radius:28px;padding:clamp(24px,2.4vw,34px);display:flex;flex-direction:column;gap:16px">
+        <span style="font-size:18px;letter-spacing:3px;color:#8a6428">★★★★★</span>
+        <p style="font-size:15.5px;line-height:1.65;color:#4a3b43;margin:0;flex:1">De combinatie van voeding en training in één plan maakte alles logisch. Voor het eerst het gevoel dat mijn schema bij mijn leven past in plaats van andersom.</p>
+        <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#4a2437">Lieke</span>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="contact" style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:clamp(24px,3vw,48px) clamp(20px,5vw,64px) clamp(48px,6vw,88px)">
+    <div style="background:#4a2437;color:#f6f0fb;border-radius:clamp(36px,5vw,64px);padding:clamp(32px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(290px,100%),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+      <div>
+        <span style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#cdbaf7">Contact</span>
+        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(34px,4.4vw,58px);line-height:1.04;margin:14px 0 16px;color:#f6f0fb">Plan een gratis kennismaking</h2>
+        <p style="font-size:17px;line-height:1.65;color:rgba(246,240,251,0.82);margin:0;max-width:44ch">Twintig minuten, geen verplichtingen. Laat je gegevens achter en ik neem binnen twee werkdagen contact op.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <input placeholder="Je naam" style="background:#fff;border:none;border-radius:999px;padding:16px 24px;color:#332b31;font-size:16px;font-family:'Figtree',sans-serif;min-height:54px">
+        <input placeholder="E-mailadres" style="background:#fff;border:none;border-radius:999px;padding:16px 24px;color:#332b31;font-size:16px;font-family:'Figtree',sans-serif;min-height:54px">
+        <input placeholder="Waar wil je aan werken?" style="background:#fff;border:none;border-radius:999px;padding:16px 24px;color:#332b31;font-size:16px;font-family:'Figtree',sans-serif;min-height:54px">
+        <button style="background:#cdbaf7;color:#4a2437;border:none;border-radius:999px;padding:17px 30px;font-size:14px;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;font-family:'Figtree',sans-serif" style-hover="background:#dccdfb">Verstuur</button>
+      </div>
+    </div>
+  </section>
+
+  <footer style="position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:28px clamp(20px,5vw,64px) 56px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;border-top:1px solid #e7dfe8">
+    <span style="font-family:'Instrument Serif',serif;font-size:26px;color:#4a2437;margin-right:auto">Coco Brocades</span>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="https://instagram.com" aria-label="Instagram" style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#4a2437;border:1px solid #e0d5e2" style-hover="background:#efe8fa;color:#4a2437"><svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5.5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg></a>
+      <a href="https://tiktok.com" aria-label="TikTok" style="width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#4a2437;border:1px solid #e0d5e2" style-hover="background:#efe8fa;color:#4a2437"><svg width="19" height="19" sc-camel-view-box="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3v9.8a3.6 3.6 0 1 1-3.1-3.57"></path><path d="M14.5 3.2a5.2 5.2 0 0 0 5 4.3"></path></svg></a>
+    </div>
+    <a href="#" style="font-size:14px;color:#5a4f56">hallo@cocobrocades.nl</a>
+    <span style="font-size:13px;color:#6f636a">Kwaliteitsgeregistreerd diëtist · KP 000000</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;showLogos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secties&quot;},&quot;showPrijzen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secties&quot;},&quot;showQuote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secties&quot;}}">
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.rail = React.createRef();
+    this.state = { isMobile: false, menuOpen: false };
+    this.onResize = () => {
+      const m = window.innerWidth < 900;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m, menuOpen: false });
+    };
+  }
+  componentDidMount() {
+    this.onResize();
+    window.addEventListener('resize', this.onResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+  scrollRail(dir) {
+    const el = this.rail.current;
+    if (!el) return;
+    el.scrollBy({ left: dir * Math.min(el.clientWidth * 0.8, 520), behavior: 'smooth' });
+  }
+  renderVals() {
+    return {
+      showLogos: this.props.showLogos ?? true,
+      showPrijzen: this.props.showPrijzen ?? true,
+      showQuote: this.props.showQuote ?? true,
+      isMobile: this.state.isMobile,
+      isDesktop: !this.state.isMobile,
+      menuOpen: this.state.menuOpen,
+      openMenu: () => this.setState({ menuOpen: true }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      rail: this.rail,
+      prev: () => this.scrollRail(-1),
+      next: () => this.scrollRail(1),
+    };
+  }
+}
+</script>
+
+
+</body></html>
