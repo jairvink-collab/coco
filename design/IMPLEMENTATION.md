@@ -112,6 +112,8 @@ hoogte, zodat het boek om zijn onderkant kantelt in plaats van om zijn midden.
 De overgang is een veer van 0,55 seconde met weinig terugveren. De wrapper staat
 op `overflow: visible` zodat de kanteling niet wordt afgeknipt.
 
+De cover is aanklikbaar en opent de boek-PDF op boekdb in een nieuw tabblad.
+
 De bijgesneden cover staat ook in `framer/assets/boek-cover-bijgesneden.png`.
 
 ## Pijlen bij Reviews
