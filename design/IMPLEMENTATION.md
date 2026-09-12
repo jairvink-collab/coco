@@ -94,6 +94,24 @@ expliciete wens is de overlay de juiste keuze.
 - Op tablet was het portret 380px breed in een kolom van ongeveer 345px en liep
   het voorbij de marge. Nu volle breedte met een maximum van 330px.
 
+## Boekcover en de tilt
+
+De aangeleverde PNG was 666 bij 375 pixels, maar het boek besloeg daarvan maar
+233 bij 342 in het midden: ruim 200 pixels transparante ruimte links en rechts.
+Een schaduw op het frame viel daardoor ver buiten het boek, en een kanteling
+draaide om een middelpunt dat grotendeels leeg was.
+
+De cover is bijgesneden tot precies het boek en opnieuw geupload. Het kader volgt
+nu de verhouding van het boek zelf, 0,685 breed ten opzichte van hoog: 280 bij
+409 op desktop, 228 bij 333 op tablet en 176 bij 257 op mobiel.
+
+De kanteling bij hover staat er weer op, zonder enige schaduw: `perspective` van
+1200px op de wrapper, en op de cover een rotatie van -8 en 12 graden, schaal 1.04
+en 6 pixels omhoog, met een veer als overgang. De wrapper staat op
+`overflow: visible` zodat de kanteling niet wordt afgeknipt.
+
+De bijgesneden cover staat ook in `framer/assets/boek-cover-bijgesneden.png`.
+
 ## Pijlen bij Reviews
 
 De rail heeft `elementId="reviews-rail"`, zodat hij in de DOM op te zoeken is.
