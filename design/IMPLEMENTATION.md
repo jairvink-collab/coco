@@ -94,13 +94,28 @@ expliciete wens is de overlay de juiste keuze.
 - Op tablet was het portret 380px breed in een kolom van ongeveer 345px en liep
   het voorbij de marge. Nu volle breedte met een maximum van 330px.
 
+## Pijlen bij Reviews
+
+De rail heeft `elementId="reviews-rail"`, zodat hij in de DOM op te zoeken is.
+Een code override in `ReviewArrows.tsx` hangt aan beide pijlknoppen en roept
+`scrollBy` aan op die rail, met dezelfde stapgrootte als het ontwerp:
+`min(clientWidth * 0.8, 520)`. De knoppen en de rail blijven gewoon canvas-native,
+de override voegt alleen het gedrag toe.
+
+Framer heeft geen ingebouwde actie om een container te scrollen, en de
+meegeleverde Carousel component heeft alleen slepen, geen pijlen. Een override
+is daarom de enige route die de bestaande opmaak intact laat. De bron staat ook
+in `framer/code/ReviewArrows.tsx`.
+
+Overrides draaien alleen in preview en op de gepubliceerde site, niet op het
+canvas zelf.
+
 ## Wat nog niet klopt met het ontwerp
 
 - De zes partnerlogo's zijn nog tekstplaceholders. Portret, sfeerfoto en
   boekcover zijn inmiddels echte beelden.
 - De draaiende stempeltekst rond de hero-knop is een SVG met `textPath`. Nu staat
   er een cirkel met pijl. Vergt een code component of los SVG-asset.
-- De pijlen bij Reviews zijn visueel. De rail zelf scrollt wel horizontaal.
 - Mobiel menu en breakpoints ontbreken, er is alleen Desktop 1440.
 - De vierde Diensten-kaart is in het ontwerp donker. Een CMS-lijst deelt één
   template, dus alle vier zijn nu wit.
