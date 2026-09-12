@@ -68,23 +68,31 @@ breakpoints.
 
 ## Mobiel menu
 
-Op tablet en mobiel zijn de merknaam en de linkbalk verborgen en verschijnt in
-plaats daarvan de component **Mobiel menu**: een gesloten variant van 60px die
-de links wegknipt, en een open variant met `height: auto` die ze toont. De
-hamburger wisselt met `SET_VARIANT` tussen beide. Dit is het patroon dat Framer
-zelf voorschrijft voor een drawer, een vaste overlay is er expliciet niet voor
-bedoeld.
+Op tablet en mobiel verbergt de nav de linkbalk en verschijnt een hamburger
+rechts in de balk. Die opent met `SHOW_OVERLAY` een `FixedOverlayNode` waarvan
+het paneel op alle vier de randen is vastgezet, dus echt schermvullend. Het
+paneel is plum, met de merknaam en een sluitknop bovenin, zeven links in
+Instrument Serif en het e-mailadres onderaan. De sluitknop en elke link vuren
+`DISMISS_OVERLAY`, de achtergrond blokkeert scrollen en sluit bij een tik ernaast.
 
-## Tilt op het boek
+Framer raadt normaal een drawer met een open variant aan in plaats van een vaste
+overlay, maar dat kan niet schermvullend over de pagina liggen. Voor deze
+expliciete wens is de overlay de juiste keuze.
 
-De boekcover kantelt bij hover: `perspective` van 1200px op de wrapper,
-`preserve3d`, en op de cover zelf een rotatie van -9 en 14 graden, schaal 1.05,
-8 pixels omhoog en een diepere schaduw, met een veer als overgang. Het paneel
-eromheen staat op `overflow: visible` zodat het boek er tijdens de kanteling
-uit mag steken.
+## UX-correcties
 
-Let op: dit is een kanteling bij hover, niet een die de muis volgt. Dat laatste
-vraagt een code component.
+- De intro bij Trajecten stond op `width: auto`. Bij meerregelige tekst hugt dat
+  de inhoud in plaats van mee te krimpen, waardoor de tekst op mobiel buiten
+  beeld liep. Nu `1fr`, en op mobiel staat de kop verticaal.
+- De hero-knoppen wrapten gecentreerd in een horizontale rij, waardoor ze scheef
+  onder elkaar leken te staan. Op mobiel is dat nu een verticale stack links
+  uitgelijnd, met de primaire knop over de volle breedte.
+- De hamburger stond tegen de merknaam aan. De merknaam neemt nu `1fr`, zodat de
+  knop tegen de rechterrand valt.
+- De knoppen bij het boek en de verstuurknop lopen op mobiel mee met de breedte
+  van hun buren, zodat er geen ongelijke randen meer staan.
+- Op tablet was het portret 380px breed in een kolom van ongeveer 345px en liep
+  het voorbij de marge. Nu volle breedte met een maximum van 330px.
 
 ## Wat nog niet klopt met het ontwerp
 
