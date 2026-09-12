@@ -116,6 +116,17 @@ De cover is aanklikbaar en opent de boek-PDF op boekdb in een nieuw tabblad.
 
 De bijgesneden cover staat ook in `framer/assets/boek-cover-bijgesneden.png`.
 
+## Reviewkaarten
+
+De quote zit in een aparte houder met `overflow: auto` en een maximale hoogte van
+180 pixels, op mobiel 150. De kaart zelf houdt een automatische hoogte, dus korte
+reviews blijven korte kaarten en alleen een lange review krijgt een scrollbare
+tekst. Sterren en naam blijven altijd staan.
+
+Let op de valkuil: een kind met `height: 1fr` in een kaart met automatische hoogte
+krijgt geen ruimte en klapt samen tot de minimumhoogte. De begrenzing hoort dus op
+de teksthouder te staan, niet op de kaart.
+
 ## Pijlen bij Reviews
 
 De rail heeft `elementId="reviews-rail"`, zodat hij in de DOM op te zoeken is.
@@ -131,6 +142,12 @@ in `framer/code/ReviewArrows.tsx`.
 
 Overrides draaien alleen in preview en op de gepubliceerde site, niet op het
 canvas zelf.
+
+## Links
+
+De boekcover opent de boek-PDF op boekdb in een nieuw tabblad. De footer heeft
+Instagram, TikTok en YouTube, alle drie naar de echte kanalen en in een nieuw
+tabblad.
 
 ## Wat nog niet klopt met het ontwerp
 
