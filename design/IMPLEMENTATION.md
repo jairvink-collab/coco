@@ -106,9 +106,11 @@ nu de verhouding van het boek zelf, 0,685 breed ten opzichte van hoog: 280 bij
 409 op desktop, 228 bij 333 op tablet en 176 bij 257 op mobiel.
 
 De kanteling bij hover staat er weer op, zonder enige schaduw: `perspective` van
-1200px op de wrapper, en op de cover een rotatie van -8 en 12 graden, schaal 1.04
-en 6 pixels omhoog, met een veer als overgang. De wrapper staat op
-`overflow: visible` zodat de kanteling niet wordt afgeknipt.
+1200px op de wrapper, en op de cover een rotatie van 3 graden over de x-as en 7
+over de y-as, schaal 1.02 en 8 pixels omhoog. Het draaipunt ligt op 62 procent
+hoogte, zodat het boek om zijn onderkant kantelt in plaats van om zijn midden.
+De overgang is een veer van 0,55 seconde met weinig terugveren. De wrapper staat
+op `overflow: visible` zodat de kanteling niet wordt afgeknipt.
 
 De bijgesneden cover staat ook in `framer/assets/boek-cover-bijgesneden.png`.
 
