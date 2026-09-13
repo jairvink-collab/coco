@@ -116,6 +116,39 @@ De cover is aanklikbaar en opent de boek-PDF op boekdb in een nieuw tabblad.
 
 De bijgesneden cover staat ook in `framer/assets/boek-cover-bijgesneden.png`.
 
+## Sitestructuur
+
+Negen pagina's, allemaal met dezelfde layout template:
+
+- `/` home
+- `/over-mij`
+- `/diensten` met vier detailpagina's: `/diensten/1-1-coaching`,
+  `/diensten/groepscoaching`, `/diensten/het-kookboek`,
+  `/diensten/lezingen-en-workshops`
+- `/boek`
+- `/contact`
+
+## Layout template
+
+Nav en footer staan in een `LayoutTemplateNode` met de naam Site Layout, met een
+`PlaceholderNode` ertussen waar de pagina-inhoud in valt. De template heeft eigen
+breakpoints voor Desktop, Tablet en Phone, inclusief het mobiele menu. Alle
+pagina's verwijzen ernaar via `layoutTemplate`, dus de navigatie bestaat maar op
+één plek.
+
+De template-breakpoint eist een vaste pixelhoogte; `height: auto` wordt geweigerd.
+Uitlijning, gap, padding, achtergrond en overflow van een pagina-breakpoint zijn
+eigendom van de template en kunnen niet op de pagina zelf worden gezet.
+
+De navigatie wijst nu naar pagina's: Over mij, Diensten, Het boek. Trajecten en
+Reviews blijven ankers op de home. Expertise is uit de balk gehaald en staat als
+sectie op `/over-mij`.
+
+Elke pagina heeft eigen Desktop-, Tablet- en Phone-breakpoints voor de inhoud,
+plus eigen `metadata.title` en `metadata.description`.
+
+De nieuwe pagina's gebruiken geen CMS, alles staat statisch op het canvas.
+
 ## Reviewkaarten
 
 De quote zit in een aparte houder met `overflow: auto` en een maximale hoogte van
