@@ -36,7 +36,7 @@ Ankers: `#top`, `#over`, `#expertise`, `#diensten`, `#trajecten`, `#boek`,
 - **Producten**: Titel, Prijslabel, Kaarttekst, Beschrijving, Linktekst, Link.
   Vier items, waarvan `1:1 coaching` de echte copy en prijs draagt. De andere drie
   komen uit het ontwerp en zijn nog placeholder.
-- **Reviews**: Naam, Quote. Vijf items.
+- **Reviews**: Naam, Quote. Elf items, de echte reviews van cliënten.
 
 ## Twee Framer-eigenaardigheden
 
@@ -47,9 +47,13 @@ Ankers: `#top`, `#over`, `#expertise`, `#diensten`, `#trajecten`, `#boek`,
 
 ## Breakpoints
 
-Drie breakpoints als replica's van Desktop: **Desktop 1440**, **Tablet 810**,
+Drie breakpoints als replica's van Desktop: **Desktop 1440**, **Tablet 768**,
 **Phone 390**. Replica's erven alles van de primaire variant, dus er is per
 breakpoint alleen overschreven wat anders moet.
+
+De breedte van een breakpoint bepaalt zijn media query. Tablet stond op 810 en
+is naar 768 gezet, op alle negen pagina's en op de layout template. De ranges
+zijn nu Desktop vanaf 1440, Tablet van 768 tot 1440 en Phone tot 768.
 
 - Secties: horizontale padding 64 naar 32 naar 20.
 - Rasters: Hero, Expertise, Werkwijze, Boek en Contact worden op tablet en
@@ -123,7 +127,7 @@ Negen pagina's, allemaal met dezelfde layout template:
 - `/` home
 - `/over-mij`
 - `/diensten` met vier detailpagina's: `/diensten/1-1-coaching`,
-  `/diensten/groepscoaching`, `/diensten/het-kookboek`,
+  `/diensten/the-nourish-club`, `/diensten/het-kookboek`,
   `/diensten/lezingen-en-workshops`
 - `/boek`
 - `/contact`
@@ -152,13 +156,15 @@ De nieuwe pagina's gebruiken geen CMS, alles staat statisch op het canvas.
 ## Reviewkaarten
 
 De quote zit in een aparte houder met `overflow: auto` en een maximale hoogte van
-180 pixels, op mobiel 150. De kaart zelf houdt een automatische hoogte, dus korte
+230 pixels, op mobiel 180. Die ruimte is opgerekt toen de echte reviews erin
+kwamen, die een stuk langer zijn dan de placeholders. De kaart zelf houdt een automatische hoogte, dus korte
 reviews blijven korte kaarten en alleen een lange review krijgt een scrollbare
 tekst. Sterren en naam blijven altijd staan.
 
 Let op de valkuil: een kind met `height: 1fr` in een kaart met automatische hoogte
 krijgt geen ruimte en klapt samen tot de minimumhoogte. De begrenzing hoort dus op
-de teksthouder te staan, niet op de kaart.
+de teksthouder te staan, niet op de kaart. Daarom staan de rail en de kaart zelf
+op `height: auto`: met een vaste railhoogte viel de naam onder de kaartrand weg.
 
 ## Pijlen bij Reviews
 
@@ -176,6 +182,18 @@ in `framer/code/ReviewArrows.tsx`.
 Overrides draaien alleen in preview en op de gepubliceerde site, niet op het
 canvas zelf.
 
+## Toon en contactgegevens
+
+- Het e-mailadres is overal `cocobrocades@gmail.com`, zowel in de tekst als in de
+  `mailto:`. Het staat op drie plekken: de contactpagina, het mobiele menu en de
+  footer.
+- De contactsectie belooft niets over geld of tijd meer. Geen gratis
+  kennismaking, geen twintig minuten en geen twee werkdagen, maar simpelweg
+  "Ik neem zo snel mogelijk contact met je op". Dat geldt voor de contactpagina
+  en voor hetzelfde blok op de home.
+- De boekpagina staat in de ik-vorm. Coco schreef het boek zelf, dus ze praat
+  daar niet in de derde persoon over zichzelf.
+
 ## Links
 
 De boekcover opent de boek-PDF op boekdb in een nieuw tabblad. De footer heeft
@@ -188,6 +206,11 @@ tabblad.
   boekcover zijn inmiddels echte beelden.
 - De draaiende stempeltekst rond de hero-knop is een SVG met `textPath`. Nu staat
   er een cirkel met pijl. Vergt een code component of los SVG-asset.
-- Mobiel menu en breakpoints ontbreken, er is alleen Desktop 1440.
 - De vierde Diensten-kaart is in het ontwerp donker. Een CMS-lijst deelt één
   template, dus alle vier zijn nu wit.
+- De prijzen op de site lopen niet gelijk met `content/producten.md`. Op de site
+  staat 1:1 coaching op 650 en The Nourish Club op 50, in het document 600 en
+  vanaf 350. Het kookboek staat op de home op 26,99 en op zijn dienstpagina op
+  67,99. Dit is niet aangepast, het wacht op de juiste bedragen.
+- De dienstpagina van het kookboek zegt nog dat elk traject met een intake start
+  en dat vergoeding mogelijk is. Dat hoort niet bij een boek.
