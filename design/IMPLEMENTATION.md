@@ -52,8 +52,8 @@ kaart korter mag zijn. Nu hugt de kaart zijn inhoud, en op desktop en tablet
 staan de instanties op `height: 1fr` zodat ze toch even hoog zijn.
 
 Prijzen: 1:1 coaching vanaf 650, The Nourish Club vanaf 350, het kookboek vanaf
-26,99 en lezingen en workshops op aanvraag. Dezelfde bedragen staan op
-`/diensten` en op de vier dienstpagina's.
+26,99 en lezingen en workshops op aanvraag. Dezelfde bedragen staan op de
+pagina's `/1-1-coaching` en `/the-nourish-club`.
 
 ## Twee Framer-eigenaardigheden
 
@@ -139,15 +139,20 @@ De bijgesneden cover staat ook in `framer/assets/boek-cover-bijgesneden.png`.
 
 ## Sitestructuur
 
-Negen pagina's, allemaal met dezelfde layout template:
+Zes pagina's, allemaal met dezelfde layout template:
 
 - `/` home
 - `/over-mij`
-- `/diensten` met vier detailpagina's: `/diensten/1-1-coaching`,
-  `/diensten/the-nourish-club`, `/diensten/het-kookboek`,
-  `/diensten/lezingen-en-workshops`
+- `/1-1-coaching`
+- `/the-nourish-club`
 - `/boek`
 - `/contact`
+
+De overzichtspagina `/diensten` en de losse pagina's voor het kookboek en voor
+lezingen en workshops bestaan niet meer. Coaching en The Nourish Club staan nu
+los, dus de terugknop Alle diensten is van allebei de pagina's gehaald. De
+dienstenkaarten op de home wijzen rechtstreeks naar `/1-1-coaching`,
+`/the-nourish-club`, `/boek` en `/contact`.
 
 ## Layout template
 
@@ -199,21 +204,31 @@ in `framer/code/ReviewArrows.tsx`.
 Overrides draaien alleen in preview en op de gepubliceerde site, niet op het
 canvas zelf.
 
-## Intakeformulier
+## Twee formulieren
 
-De contactpagina draagt het intakeformulier. Drie korte velden in pilvorm voor
-naam, leeftijd en e-mailadres, daarna zes open vragen, elk als een eigen blok met
-een label, soms een toelichting eronder, en een tekstvlak van 112 pixels hoog met
-een radius van 24. De namen van de velden zijn `naam`, `leeftijd`, `email`,
-`hulpvraag`, `gewenste-verandering`, `dagelijkse-invloed`, `voorgeschiedenis`,
+**Het korte contactformulier** staat op de home en op de contactpagina, in
+hetzelfde plum paneel: naam, e-mailadres en een vrij bericht, met de knop
+Verstuur. Op de contactpagina is de tracking-id `contact-pagina-form`, op de
+home `kennismaking-form`.
+
+**Het intakeformulier** hoort bij de coaching en staat daarom op
+`/1-1-coaching`, onderaan in een eigen sectie met `elementId="intake"`. De knop
+Plan een intake erboven scrollt met `smoothScroll` naar `/1-1-coaching#intake`
+in plaats van door te sturen naar contact.
+
+Het formulier zelf: drie korte velden in pilvorm voor naam, leeftijd en
+e-mailadres, daarna zes open vragen, elk als een eigen blok met een label, soms
+een toelichting eronder, en een tekstvlak van 112 pixels hoog met een radius van
+24. De namen van de velden zijn `naam`, `leeftijd`, `email`, `hulpvraag`,
+`gewenste-verandering`, `dagelijkse-invloed`, `voorgeschiedenis`,
 `huidige-begeleiding` en `overig`. Alleen de laatste is niet verplicht.
 De tracking-id is `intakeformulier`.
 
-Het paneel is op desktop nog twee kolommen, waarbij de linkerkolom `sticky` staat
-op 120 pixels zodat de uitleg meeloopt langs het lange formulier. Op tablet en
+Het paneel is op desktop twee kolommen, waarbij de linkerkolom `sticky` staat op
+120 pixels zodat de uitleg meeloopt langs het lange formulier. Op tablet en
 mobiel is het paneel een verticale stack met de uitleg boven het formulier, en
-daar staat de kolom weer op `relative`. De padding van het paneel is op mobiel
-teruggebracht van 72 naar 24 pixels, anders bleef er maar 246 pixels inhoud over.
+daar staat de kolom weer op `relative`, met 48 en 28 pixels padding in plaats van
+72.
 
 ## Toon en contactgegevens
 
@@ -241,5 +256,3 @@ tabblad.
   er een cirkel met pijl. Vergt een code component of los SVG-asset.
 - De vierde Diensten-kaart is in het ontwerp donker. Alle vier zijn nu wit. Met
   het component kan dat wel, via een tweede visuele variant.
-- De dienstpagina van het kookboek zegt nog dat elk traject met een intake start
-  en dat vergoeding mogelijk is. Dat hoort niet bij een boek.
