@@ -34,8 +34,9 @@ Ankers: `#top`, `#over`, `#expertise`, `#diensten`, `#trajecten`, `#boek`,
 ## CMS, maximaal twee collecties
 
 - **Producten**: Titel, Prijslabel, Kaarttekst, Beschrijving, Linktekst, Link.
-  Vier items, waarvan `1:1 coaching` de echte copy en prijs draagt. De andere drie
-  komen uit het ontwerp en zijn nog placeholder.
+  Vier items. Prijzen: 1:1 coaching vanaf 650, The Nourish Club vanaf 350,
+  het kookboek vanaf 26,99 en lezingen en workshops op aanvraag. Dezelfde
+  bedragen staan op `/diensten` en op de vier dienstpagina's.
 - **Reviews**: Naam, Quote. Elf items, de echte reviews van cliënten.
 
 ## Twee Framer-eigenaardigheden
@@ -182,6 +183,22 @@ in `framer/code/ReviewArrows.tsx`.
 Overrides draaien alleen in preview en op de gepubliceerde site, niet op het
 canvas zelf.
 
+## Intakeformulier
+
+De contactpagina draagt het intakeformulier. Drie korte velden in pilvorm voor
+naam, leeftijd en e-mailadres, daarna zes open vragen, elk als een eigen blok met
+een label, soms een toelichting eronder, en een tekstvlak van 112 pixels hoog met
+een radius van 24. De namen van de velden zijn `naam`, `leeftijd`, `email`,
+`hulpvraag`, `gewenste-verandering`, `dagelijkse-invloed`, `voorgeschiedenis`,
+`huidige-begeleiding` en `overig`. Alleen de laatste is niet verplicht.
+De tracking-id is `intakeformulier`.
+
+Het paneel is op desktop nog twee kolommen, waarbij de linkerkolom `sticky` staat
+op 120 pixels zodat de uitleg meeloopt langs het lange formulier. Op tablet en
+mobiel is het paneel een verticale stack met de uitleg boven het formulier, en
+daar staat de kolom weer op `relative`. De padding van het paneel is op mobiel
+teruggebracht van 72 naar 24 pixels, anders bleef er maar 246 pixels inhoud over.
+
 ## Toon en contactgegevens
 
 - Het e-mailadres is overal `cocobrocades@gmail.com`, zowel in de tekst als in de
@@ -208,9 +225,5 @@ tabblad.
   er een cirkel met pijl. Vergt een code component of los SVG-asset.
 - De vierde Diensten-kaart is in het ontwerp donker. Een CMS-lijst deelt één
   template, dus alle vier zijn nu wit.
-- De prijzen op de site lopen niet gelijk met `content/producten.md`. Op de site
-  staat 1:1 coaching op 650 en The Nourish Club op 50, in het document 600 en
-  vanaf 350. Het kookboek staat op de home op 26,99 en op zijn dienstpagina op
-  67,99. Dit is niet aangepast, het wacht op de juiste bedragen.
 - De dienstpagina van het kookboek zegt nog dat elk traject met een intake start
   en dat vergoeding mogelijk is. Dat hoort niet bij een boek.

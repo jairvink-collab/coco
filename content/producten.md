@@ -4,7 +4,7 @@ Max 2 CMS-collecties in dit project. Eén is Reviews, de andere is Producten.
 
 ## 1:1 coaching
 
-**Prijs:** 600
+**Prijs:** 650
 
 In mijn 1:1 coaching werken we samen aan een gezonde en ontspannen relatie met voeding, je lichaam én je prestaties. Geen standaard voedingsplan, maar persoonlijke begeleiding die past bij jouw leven, doelen en waar jij op dit moment tegenaan loopt.
 
