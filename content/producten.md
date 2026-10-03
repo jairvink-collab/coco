@@ -1,6 +1,7 @@
 # Producten
 
-Max 2 CMS-collecties in dit project. Eén is Reviews, de andere is Producten.
+De dienstenkaarten op de home komen uit het component Dienst Kaart, niet uit een
+CMS-collectie. De enige collectie in het project is Reviews.
 
 ## 1:1 coaching
 

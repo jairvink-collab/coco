@@ -31,13 +31,29 @@ logobalk met ticker, Diensten, Trajecten, Werkwijze, Boek, Reviews, Contact, Foo
 Ankers: `#top`, `#over`, `#expertise`, `#diensten`, `#trajecten`, `#boek`,
 `#reviews`, `#contact`, allemaal met smooth scroll.
 
-## CMS, maximaal twee collecties
+## CMS
 
-- **Producten**: Titel, Prijslabel, Kaarttekst, Beschrijving, Linktekst, Link.
-  Vier items. Prijzen: 1:1 coaching vanaf 650, The Nourish Club vanaf 350,
-  het kookboek vanaf 26,99 en lezingen en workshops op aanvraag. Dezelfde
-  bedragen staan op `/diensten` en op de vier dienstpagina's.
-- **Reviews**: Naam, Quote. Elf items, de echte reviews van cliënten.
+Er is nog één collectie: **Reviews**, met Naam en Quote. Elf items, de echte
+reviews van cliënten.
+
+De collectie Producten is weg. De dienstenkaarten op de home zijn nu een
+component in plaats van een CMS-lijst.
+
+## Component Dienst Kaart
+
+De kaart is een `ComponentNode` met vijf controls: Prijslabel, Titel,
+Kaarttekst (als tekstvlak), Linktekst en Link. De hele kaart is de link, net als
+in de CMS-versie. Op de home staan vier instanties in een raster, en de tekst
+staat per instantie in de controls.
+
+De wortel van het component heeft `height: auto`. Dat is bewust: een component
+met een vaste hoogte dwingt elke instantie in die hoogte, ook op mobiel waar de
+kaart korter mag zijn. Nu hugt de kaart zijn inhoud, en op desktop en tablet
+staan de instanties op `height: 1fr` zodat ze toch even hoog zijn.
+
+Prijzen: 1:1 coaching vanaf 650, The Nourish Club vanaf 350, het kookboek vanaf
+26,99 en lezingen en workshops op aanvraag. Dezelfde bedragen staan op
+`/diensten` en op de vier dienstpagina's.
 
 ## Twee Framer-eigenaardigheden
 
@@ -223,7 +239,7 @@ tabblad.
   boekcover zijn inmiddels echte beelden.
 - De draaiende stempeltekst rond de hero-knop is een SVG met `textPath`. Nu staat
   er een cirkel met pijl. Vergt een code component of los SVG-asset.
-- De vierde Diensten-kaart is in het ontwerp donker. Een CMS-lijst deelt één
-  template, dus alle vier zijn nu wit.
+- De vierde Diensten-kaart is in het ontwerp donker. Alle vier zijn nu wit. Met
+  het component kan dat wel, via een tweede visuele variant.
 - De dienstpagina van het kookboek zegt nog dat elk traject met een intake start
   en dat vergoeding mogelijk is. Dat hoort niet bij een boek.
