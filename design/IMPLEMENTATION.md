@@ -252,8 +252,11 @@ footer. De meta geldt voor de hele site en werkt pas op de gepubliceerde versie.
 ## Links
 
 - Start intake, in de hero op de home en in de CTA op Over mij, wijst naar
-  `https://major-challenge-541939.framer.app/1-1-coaching#intake`. Dat is een
-  absolute URL op het Framer-domein. Bij een eigen domein moet die mee.
+  `/1-1-coaching#intake`. Relatief, dus bij een eigen domein verhuist hij mee.
+
+  Let op bij het zetten van zo'n link: een `applyChanges` met `pagePath` gooit
+  de hash van een verwijzing naar een andere pagina er stilletjes af, want het
+  element-id staat niet in die scope. Zonder `pagePath` blijft hij wel staan.
 - Neem contact op wijst overal naar `/contact`: de tekstlink bij de hero en de
   kaart Lezingen en workshops.
 - Plan een intake op de coachingpagina scrollt naar `#intake` op diezelfde
