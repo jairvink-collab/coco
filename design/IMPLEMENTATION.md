@@ -230,6 +230,13 @@ mobiel is het paneel een verticale stack met de uitleg boven het formulier, en
 daar staat de kolom weer op `relative`, met 48 en 28 pixels padding in plaats van
 72.
 
+## Custom code
+
+In `headStart` staat `<meta name="format-detection" content="telephone=no">`.
+Zonder die regel ziet iOS het KP-nummer als telefoonnummer en maakt het een
+blauwe belbare link. Het nummer staat op drie plekken: de home, Over mij en de
+footer. De meta geldt voor de hele site en werkt pas op de gepubliceerde versie.
+
 ## Toon en contactgegevens
 
 - Het e-mailadres is overal `cocobrocades@gmail.com`, zowel in de tekst als in de
@@ -243,6 +250,14 @@ daar staat de kolom weer op `relative`, met 48 en 28 pixels padding in plaats va
   daar niet in de derde persoon over zichzelf.
 
 ## Links
+
+- Start intake, in de hero op de home en in de CTA op Over mij, wijst naar
+  `https://major-challenge-541939.framer.app/1-1-coaching#intake`. Dat is een
+  absolute URL op het Framer-domein. Bij een eigen domein moet die mee.
+- Neem contact op wijst overal naar `/contact`: de tekstlink bij de hero en de
+  kaart Lezingen en workshops.
+- Plan een intake op de coachingpagina scrollt naar `#intake` op diezelfde
+  pagina.
 
 De boekcover opent de boek-PDF op boekdb in een nieuw tabblad. De footer heeft
 Instagram, TikTok en YouTube, alle drie naar de echte kanalen en in een nieuw
