@@ -51,7 +51,7 @@ met een vaste hoogte dwingt elke instantie in die hoogte, ook op mobiel waar de
 kaart korter mag zijn. Nu hugt de kaart zijn inhoud, en op desktop en tablet
 staan de instanties op `height: 1fr` zodat ze toch even hoog zijn.
 
-Prijzen: 1:1 coaching vanaf 650, The Nourish Club vanaf 350, het kookboek vanaf
+Prijzen: 1:1 coaching vanaf 695, The Nourish Club vanaf 350, het kookboek vanaf
 26,99 en lezingen en workshops op aanvraag. Dezelfde bedragen staan op de
 pagina's `/1-1-coaching` en `/the-nourish-club`.
 
