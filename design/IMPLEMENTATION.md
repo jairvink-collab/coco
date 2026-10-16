@@ -267,10 +267,19 @@ Verzonden en Mislukt. Op de knopinstantie van elk formulier staan
 `formButtonPendingVariant`, `formButtonSuccessVariant` en
 `formButtonErrorVariant`, zodat de knop zelf de terugkoppeling geeft.
 
-Verzonden zegt "Dankjewel, ik neem contact op", Mislukt zegt "Er ging iets mis,
-probeer opnieuw". Allebei in Pill Label in plaats van het uppercase Button Plum,
-want een bedankje dat schreeuwt leest raar. Die twee zijn 340 pixels breed met
-`maxWidth: 100%`, zodat ze op mobiel binnen de kolom blijven.
+Versturen toont een draaiend rondje in plaats van tekst, Verzonden zegt
+"Verstuurd" en Mislukt zegt "Er ging iets mis, probeer opnieuw". Die laatste is
+340 pixels breed met `maxWidth: 100%`, zodat de zin past en op mobiel toch binnen
+de kolom blijft; de andere twee huggen hun inhoud.
+
+Het rondje is een code component, `framer/code/Spinner.tsx`: een cirkel met een
+rand waarvan alleen de bovenkant gekleurd is, die met framer-motion oneindig
+ronddraait. Hij heeft controls voor grootte, dikte, kleur, spoorkleur en snelheid.
+Op 17 pixels is de knop in die stand even hoog als in de andere standen.
+
+Let op hoe hij is ingehangen: je mag geen kind toevoegen aan een replica-variant,
+dus de spinner staat in de primaire variant Default met `visible: false`, en
+alleen in Versturen staat hij aan en is het label uit.
 
 Let op waar die attributen horen: op de `ComponentInstanceNode` van de knop, niet
 op het formulier eromheen. Zet je ze op het formulier, dan slikt de DSL het
