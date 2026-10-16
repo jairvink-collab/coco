@@ -260,6 +260,26 @@ Zonder die regel ziet iOS het KP-nummer als telefoonnummer en maakt het een
 blauwe belbare link. Het nummer staat op drie plekken: de home, Over mij en de
 footer. De meta geldt voor de hele site en werkt pas op de gepubliceerde versie.
 
+## Knopstatussen bij de formulieren
+
+De component Verstuur Button heeft vier varianten: Default, Versturen,
+Verzonden en Mislukt. Op de knopinstantie van elk formulier staan
+`formButtonPendingVariant`, `formButtonSuccessVariant` en
+`formButtonErrorVariant`, zodat de knop zelf de terugkoppeling geeft.
+
+Verzonden zegt "Dankjewel, ik neem contact op", Mislukt zegt "Er ging iets mis,
+probeer opnieuw". Allebei in Pill Label in plaats van het uppercase Button Plum,
+want een bedankje dat schreeuwt leest raar. Die twee zijn 340 pixels breed met
+`maxWidth: 100%`, zodat ze op mobiel binnen de kolom blijven.
+
+Let op waar die attributen horen: op de `ComponentInstanceNode` van de knop, niet
+op het formulier eromheen. Zet je ze op het formulier, dan slikt de DSL het
+zonder foutmelding en gebeurt er niets.
+
+Zonder deze varianten leek elk formulier stuk: de inzending kwam wel degelijk
+aan (de forms-API van Framer antwoordt met 201), maar er veranderde niets op het
+scherm, dus het voelde alsof de knop niet werkte.
+
 ## Toon en contactgegevens
 
 - Het e-mailadres is overal `cocobrocades@gmail.com`, zowel in de tekst als in de
