@@ -230,6 +230,29 @@ mobiel is het paneel een verticale stack met de uitleg boven het formulier, en
 daar staat de kolom weer op `relative`, met 48 en 28 pixels padding in plaats van
 72.
 
+## Titels en beschrijvingen
+
+Elke pagina heeft een eigen `metadata.title` en `metadata.description`, geschreven
+op zoekwoord en zoekintentie. Titels blijven onder de 60 tekens en beschrijvingen
+tussen 145 en 160, zodat Google ze niet afkapt.
+
+| Pagina | Titel | Kern van de beschrijving |
+|---|---|---|
+| `/` | Sportdiëtist Coco Brocades · Online voedingsbegeleiding | kwaliteitsgeregistreerd, energie, herstel, rust rond eten |
+| `/over-mij` | Over Coco Brocades · Sportdiëtist en auteur Food = Fuel | sportdiëtist en personal trainer, volledig online |
+| `/1-1-coaching` | 1:1 coaching bij een sportdiëtist · Volledig online | acht weken, vier gesprekken, vanaf 695, intakeformulier |
+| `/the-nourish-club` | The Nourish Club · Groepscoaching voeding en mindset | afvallen, rust rond eten, sportdiëtist plus psycholoog |
+| `/boek` | Food = Fuel · Het sportkookboek van Coco Brocades | vijftig recepten, hardlopen, krachttraining, HYROX |
+| `/contact` | Contact opnemen · Sportdiëtist Coco Brocades | vraag over sportvoeding, coaching of het kookboek |
+
+Twee dingen zijn bewust rechtgezet: de oude beschrijving van Over mij had het over
+"haar praktijk", in de derde persoon en met een woord dat hier niet klopt, en die
+van Contact beloofde nog een gratis kennismaking van twintig minuten.
+
+Het woord "online" staat in bijna elke titel of beschrijving. Dat is geen vulling:
+er is geen fysieke locatie, dus het hele land is doelgroep, en mensen zoeken
+letterlijk op "online diëtist" en "sportdiëtist online".
+
 ## Custom code
 
 In `headStart` staat `<meta name="format-detection" content="telephone=no">`.
