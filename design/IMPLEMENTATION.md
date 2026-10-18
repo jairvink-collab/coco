@@ -266,7 +266,10 @@ footer. De meta geldt voor de hele site en werkt pas op de gepubliceerde versie.
 `/bedankt` is de landing na een verstuurd formulier: het ronde portret van Coco,
 de kicker Bedankt, de kop "Bedankt voor je aanvraag!", de regel "Ik kom zo snel
 mogelijk bij je terug! <3" en een knop terug naar de home. Alles gecentreerd, op
-mobiel met een kleiner portret.
+mobiel met een kleiner portret. Daaronder staat "Volg me ondertussen voor tips
+over sport, eten, energie en herstel" met de knoppen naar Instagram en TikTok,
+dezelfde ronde knoppen als in de footer. YouTube staat er niet bij, want die is
+ook uit de footer gehaald.
 
 De pagina staat op `metadata.noIndex`, want een bedankpagina hoort niet in Google.
 Pas op bij het zetten daarvan: `metadata.noIndex="true"` zet in deze DSL ook
