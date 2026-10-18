@@ -147,6 +147,7 @@ Zes pagina's, allemaal met dezelfde layout template:
 - `/the-nourish-club`
 - `/boek`
 - `/contact`
+- `/bedankt`
 
 De overzichtspagina `/diensten` en de losse pagina's voor het kookboek en voor
 lezingen en workshops bestaan niet meer. Coaching en The Nourish Club staan nu
@@ -259,6 +260,22 @@ In `headStart` staat `<meta name="format-detection" content="telephone=no">`.
 Zonder die regel ziet iOS het KP-nummer als telefoonnummer en maakt het een
 blauwe belbare link. Het nummer staat op drie plekken: de home, Over mij en de
 footer. De meta geldt voor de hele site en werkt pas op de gepubliceerde versie.
+
+## Bedankpagina
+
+`/bedankt` is de landing na een verstuurd formulier: het ronde portret van Coco,
+de kicker Bedankt, de kop "Bedankt voor je aanvraag!", de regel "Ik kom zo snel
+mogelijk bij je terug! <3" en een knop terug naar de home. Alles gecentreerd, op
+mobiel met een kleiner portret.
+
+De pagina staat op `metadata.noIndex`, want een bedankpagina hoort niet in Google.
+Pas op bij het zetten daarvan: `metadata.noIndex="true"` zet in deze DSL ook
+`noIndexSite` op true, en dat haalt de hele site uit de index. Zet `noIndexSite`
+daarna expliciet terug op false en controleer het.
+
+Het doorsturen naar deze pagina na het versturen zit niet in de DSL. Dat is een
+instelling van het formulier zelf in Framer, bij de optie voor wat er na het
+versturen gebeurt. Die moet met de hand op alle drie de formulieren.
 
 ## Knopstatussen bij de formulieren
 
